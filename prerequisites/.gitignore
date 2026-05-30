@@ -1,0 +1,23 @@
+# Node
+node_modules/
+npm-debug.log*
+package-lock.json
+.pnpm-debug.log*
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Logs / artifacts
+*.log
+appium.log
+.DS_Store
+
+# Editors
+.idea/
+.vscode/
+*.swp
