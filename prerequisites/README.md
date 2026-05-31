@@ -11,6 +11,11 @@ Work through the steps **top to bottom** — each one shows the exact command fo
 > several GB — start early on a good connection.
 >
 > 🆘 **Stuck?** Jump to [Troubleshooting](#troubleshooting) or post in the cohort channel.
+>
+> 🐳 **Prefer a containerized code environment?** There's an optional VS Code devcontainer at
+> [`.devcontainer/`](../.devcontainer/README.md). Note it only standardizes the Node/Python client
+> setup — the emulator, Android SDK, and Appium server still run natively (Docker on Mac/Windows
+> can't reach a device), so you still complete the steps below.
 
 ---
 

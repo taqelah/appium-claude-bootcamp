@@ -1,0 +1,25 @@
+{
+  "name": "Appium + Claude Bootcamp — test/client env",
+  "build": { "dockerfile": "Dockerfile" },
+
+  // Lets the container reach the host's Appium server as host.docker.internal.
+  // (Built-in on Docker Desktop for macOS/Windows; this maps it on Linux hosts too.)
+  "runArgs": ["--add-host=host.docker.internal:host-gateway"],
+
+  // Your tests read these to find the Appium server running on your HOST.
+  "containerEnv": {
+    "APPIUM_HOST": "host.docker.internal",
+    "APPIUM_PORT": "4723"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "ms-python.python"
+      ]
+    }
+  },
+
+  "postCreateCommand": "node -v && python3 --version && echo 'Client env ready. Start the emulator + appium on your HOST, then run tests here against $APPIUM_HOST:$APPIUM_PORT.'"
+}
