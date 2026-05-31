@@ -51,10 +51,12 @@ brew install node@20
 brew link --overwrite node@20
 ```
 
-**🪟 Windows (PowerShell):**
+**🪟 Windows:** download the **LTS** installer (`.msi`) from <https://nodejs.org/en> and run it —
+accept the defaults (this also installs npm and adds Node to your PATH). Then **open a new terminal**.
 ```powershell
+# Package-manager alternatives (optional):
 winget install OpenJS.NodeJS.LTS
-# Chocolatey alternative: choco install nodejs-lts
+# or: choco install nodejs-lts
 ```
 
 **🐧 Linux (Debian/Ubuntu):**
