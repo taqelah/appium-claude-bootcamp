@@ -18,13 +18,12 @@ Work through the steps **top to bottom** — each one shows the exact command fo
 
 | Tool | Why | Required? |
 |------|-----|-----------|
-| **Node.js 20 LTS+** + npm | WebdriverIO labs + Appium server + Claude Code | ✅ Everyone |
+| **Node.js 20 LTS+** + npm | WebdriverIO labs + Appium server | ✅ Everyone |
 | **Python 3.10+** + pip | Appium-Python-Client labs | ✅ Everyone |
 | **JDK 17** (Temurin) | Android automation engine needs Java | ✅ Everyone |
 | **Android Studio** → SDK + emulator + 1 AVD | The device we automate against | ✅ Everyone |
 | **Appium 3.x** + `uiautomator2` driver | The automation server | ✅ Everyone |
 | **Appium Inspector** | Inspect app elements visually | ✅ Everyone |
-| **Claude Code CLI** | Our AI pair-programmer (deep dive on Day 2) | ✅ Everyone |
 | **Xcode** + `xcuitest` driver | iOS automation | 🍎 macOS only, optional |
 
 Install **both** client stacks (Node + WebdriverIO **and** Python) — the bootcamp uses both.
@@ -39,7 +38,7 @@ Install **both** client stacks (Node + WebdriverIO **and** Python) — the bootc
   - Windows → **PowerShell**. For the env-var steps, use an **Administrator** PowerShell (right-click → *Run as administrator*).
   - Linux → your shell (bash/zsh). Profile file: `~/.bashrc` (or `~/.zshrc`).
 - ⚠️ **After changing an environment variable (`JAVA_HOME`, `ANDROID_HOME`, PATH), open a NEW terminal** — changes don't apply to already-open windows.
-- **Platforms:** Android is required for everyone and works on all three OSes. iOS ([Step 9](#step-9--ios--xcode--optional-macos-only)) is optional and macOS-only.
+- **Platforms:** Android is required for everyone and works on all three OSes. iOS ([Step 8](#step-8--ios--xcode--optional-macos-only)) is optional and macOS-only.
 
 ---
 
@@ -239,27 +238,7 @@ Download the latest release for your OS from
 
 ---
 
-## Step 8 — Claude Code CLI
-
-Our AI pair-programmer. **Install + sign in now**; we do the deep dive on **Day 2**. A free tier or
-small amount of API credit is enough.
-
-**Install (all OSes, via npm):**
-```bash
-npm install -g @anthropic-ai/claude-code
-claude --version
-```
-> Alternatives without npm — macOS/Linux: `curl -fsSL https://claude.ai/install.sh | bash` ·
-> Windows: `irm https://claude.ai/install.ps1 | iex`. Docs: <https://docs.claude.com/en/docs/claude-code>
-
-**Sign in** — run `claude` once and follow the prompt. Authenticate with either a **Claude account**
-(Pro/Max) **or** an **Anthropic API key** — either is fine.
-
-**Sanity check** — inside the session, type `what is 2 + 2?`. If it answers, you're connected. `/exit` to quit.
-
----
-
-## Step 9 — iOS / Xcode  *(OPTIONAL, macOS only)*
+## Step 8 — iOS / Xcode  *(OPTIONAL, macOS only)*
 
 Skip unless you're on a Mac and want to follow the iOS examples. Android alone covers the course.
 ```bash
@@ -276,7 +255,7 @@ xcrun simctl list devices          # list available simulators
 
 ---
 
-## Step 10 — Verify your setup
+## Step 9 — Verify your setup
 
 Run these final checks — everything above should already pass:
 
@@ -317,10 +296,6 @@ Tick these off before Day 1.
 - [ ] Appium Inspector opens
 - [ ] *(macOS, optional)* `xcuitest` driver installed
 
-**Claude Code**
-- [ ] `claude --version` works
-- [ ] Logged in / authenticated
-
 **iOS (macOS only, optional)**
 - [ ] Xcode installed; `xcode-select -p` returns a path
 - [ ] A simulator available — `xcrun simctl list devices`
@@ -353,9 +328,6 @@ When every box is ticked, **you're ready**. 🎉
 needs sudo on macOS/Linux, set `npm config set prefix ~/.npm-global` and add `~/.npm-global/bin` to PATH.
 
 **`uiautomator2` driver not found** — `appium driver install uiautomator2`.
-
-**`claude: command not found`** — reinstall `npm install -g @anthropic-ai/claude-code`, reopen terminal;
-confirm npm's global bin (`npm bin -g`) is on PATH.
 
 Still stuck? Post in the **cohort channel** with: your OS, the command you ran, the full error text,
 and the output of `appium driver doctor uiautomator2`.
