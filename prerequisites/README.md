@@ -67,11 +67,9 @@ npm -v
 brew install python@3.12
 ```
 
-**🪟 Windows (PowerShell):**
-```powershell
-winget install Python.Python.3.12
-```
-> If `python` opens the Microsoft Store, disable the alias: **Settings → Apps → Advanced app
+**🪟 Windows:** download the latest **Python 3.x** installer from <https://www.python.org/downloads/windows/>
+and run it. ⚠️ On the first screen, **tick "Add python.exe to PATH"** before clicking Install. Then **open a new terminal**.
+> If `python` opens the Microsoft Store instead, disable the alias: **Settings → Apps → Advanced app
 > settings → App execution aliases** → turn off the `python.exe` entries.
 
 **Verify:**
