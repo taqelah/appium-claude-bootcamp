@@ -22,7 +22,7 @@ Work through the steps **top to bottom** — each one shows the exact command fo
 | **Python 3.10+** + pip | Appium-Python-Client labs | ✅ Everyone |
 | **JDK 17** (Temurin) | Android automation engine needs Java | ✅ Everyone |
 | **Android Studio** → SDK + emulator + 1 AVD | The device we automate against | ✅ Everyone |
-| **Appium 2.x+** + `uiautomator2` driver | The automation server | ✅ Everyone |
+| **Appium 3.x** + `uiautomator2` driver | The automation server | ✅ Everyone |
 | **Appium Inspector** | Inspect app elements visually | ✅ Everyone |
 | **Claude Code CLI** | Our AI pair-programmer (deep dive on Day 2) | ✅ Everyone |
 | **Xcode** + `xcuitest` driver | iOS automation | 🍎 macOS only, optional |
@@ -214,12 +214,12 @@ emulator-5554   device
 
 ---
 
-## Step 6 — Appium 2.x+ and the uiautomator2 driver
+## Step 6 — Appium 3.x and the uiautomator2 driver
 
 Same commands on **all OSes** (Appium is an npm package):
 ```bash
-npm install -g appium
-appium -v                                  # expect 2.x or 3.x
+npm install -g appium@latest
+appium -v                                  # expect 3.x
 appium driver install uiautomator2
 appium driver list --installed             # should list uiautomator2
 appium driver doctor uiautomator2          # deep environment check — fix anything it flags
@@ -312,7 +312,7 @@ Tick these off before Day 1.
 - [ ] Emulator boots and shows as `device` in `adb devices`
 
 **Appium**
-- [ ] Appium 2.x+ — `appium -v`
+- [ ] Appium 3.x — `appium -v`
 - [ ] `uiautomator2` driver — `appium driver list --installed`
 - [ ] Appium Inspector opens
 - [ ] *(macOS, optional)* `xcuitest` driver installed
