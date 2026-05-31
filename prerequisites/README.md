@@ -27,7 +27,7 @@ Work through the steps **top to bottom** — each one shows the exact command fo
 | **Claude Code CLI** | Our AI pair-programmer (deep dive on Day 2) | ✅ Everyone |
 | **Xcode** + `xcuitest` driver | iOS automation | 🍎 macOS only, optional |
 
-We verify **both** client stacks (Node + WebdriverIO **and** Python) because the bootcamp uses both.
+Install **both** client stacks (Node + WebdriverIO **and** Python) — the bootcamp uses both.
 
 ---
 
@@ -276,60 +276,27 @@ xcrun simctl list devices          # list available simulators
 
 ---
 
-## Step 10 — Verify your setup (doctor script)
+## Step 10 — Verify your setup
 
-The doctor checks every tool/version and prints a ✅/❌ table. It needs **no emulator or Appium running**.
+Run these final checks — everything above should already pass:
 
-**🍎 macOS / 🐧 Linux:**
 ```bash
-bash scripts/doctor.sh
+appium driver doctor uiautomator2   # confirms the Java + Android SDK wiring is correct
 ```
 
-**🪟 Windows (PowerShell):**
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts\doctor.ps1
-```
-
-Keep fixing ❌ items (see [Troubleshooting](#troubleshooting)) and re-running until it prints **PASS**.
-
----
-
-## Step 11 — Prove it works (smoke tests)
-
-This is the real "my machine is ready" moment: a tiny test opens an Appium session on your emulator,
-reads the device time, and quits. No app/APK needed. Run **both** stacks.
-
-**Terminal A** — start your emulator (Step 5), then start the Appium server and leave it running:
+Then **start your emulator** (Step 5) and confirm it's connected:
 ```bash
-appium
+adb devices                         # should list it as "device" (not offline/unauthorized)
 ```
 
-**Terminal B** — Node (WebdriverIO):
-```bash
-cd smoke/node
-npm install
-npm run smoke
-```
-Expected: `✅ SMOKE TEST PASSED — WebdriverIO drove your emulator successfully.`
-
-**Terminal B** — Python (Appium-Python-Client):
-```bash
-cd smoke/python
-python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-pytest -q -s
-```
-Expected: `SMOKE TEST PASSED - Appium-Python-Client drove your emulator successfully.` + `1 passed`.
-
-> Override host/port if your Appium runs elsewhere — set `APPIUM_HOST` / `APPIUM_PORT` before the
-> run command (defaults `127.0.0.1` / `4723`).
+Finally, walk the [checklist](#-pre-bootcamp-checklist) below — when every box is ticked, you're ready.
+Anything off? See [Troubleshooting](#troubleshooting).
 
 ---
 
 ## ✅ Pre-bootcamp checklist
 
-Tick these off — the doctor script (Step 10) covers most automatically.
+Tick these off before Day 1.
 
 **Core tools (everyone)**
 - [ ] Node.js 20 LTS+ — `node -v`
@@ -354,15 +321,11 @@ Tick these off — the doctor script (Step 10) covers most automatically.
 - [ ] `claude --version` works
 - [ ] Logged in / authenticated
 
-**Smoke tests (the real proof)**
-- [ ] Node smoke passes — `cd smoke/node && npm install && npm run smoke`
-- [ ] Python smoke passes — `cd smoke/python && pytest -q -s`
-
 **iOS (macOS only, optional)**
 - [ ] Xcode installed; `xcode-select -p` returns a path
 - [ ] A simulator available — `xcrun simctl list devices`
 
-When the doctor is all-green and both smoke tests pass, **you're ready**. 🎉
+When every box is ticked, **you're ready**. 🎉
 
 ---
 
@@ -390,15 +353,6 @@ When the doctor is all-green and both smoke tests pass, **you're ready**. 🎉
 needs sudo on macOS/Linux, set `npm config set prefix ~/.npm-global` and add `~/.npm-global/bin` to PATH.
 
 **`uiautomator2` driver not found** — `appium driver install uiautomator2`.
-
-**Smoke test: `ECONNREFUSED 127.0.0.1:4723`** — the Appium server isn't running. Run `appium` in a
-separate terminal (Step 11, Terminal A), then re-run the test.
-
-**Smoke test: session fails / no devices** — make sure the emulator is booted (`adb devices` → `device`)
-and `appium` is running; then `appium driver doctor uiautomator2`.
-
-**Python: `ModuleNotFoundError: appium` / `selenium`** — you installed into the wrong interpreter.
-Use the virtual environment: activate `.venv` and re-run `pip install -r requirements.txt`.
 
 **`claude: command not found`** — reinstall `npm install -g @anthropic-ai/claude-code`, reopen terminal;
 confirm npm's global bin (`npm bin -g`) is on PATH.
