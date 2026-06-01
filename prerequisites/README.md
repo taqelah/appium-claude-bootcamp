@@ -46,7 +46,7 @@ Install **both** client stacks (Node + WebdriverIO **and** Python) — the bootc
 
 ---
 
-## Step 1 — Node.js 20 LTS + npm
+## Step 1 — Node.js 26.x LTS + npm
 
 **🍎 macOS** (install [Homebrew](https://brew.sh) first if you don't have it):
 ```bash
