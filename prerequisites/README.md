@@ -59,7 +59,7 @@ accept the defaults (this also installs npm and adds Node to your PATH). Then **
 
 **Verify (both OSes):**
 ```bash
-node -v   # expect v20.x or newer
+node -v   # expect v26.x or newer
 npm -v
 ```
 
@@ -250,7 +250,7 @@ Anything off? See [Troubleshooting](#troubleshooting).
 Tick these off before Day 1.
 
 **Core tools (everyone)**
-- [ ] Node.js 20 LTS+ — `node -v`
+- [ ] Node.js 26 LTS+ — `node -v`
 - [ ] npm — `npm -v`
 - [ ] Python 3.10+ — `python3 --version` (Windows: `python --version`)
 - [ ] pip — `pip3 --version` / `pip --version`
