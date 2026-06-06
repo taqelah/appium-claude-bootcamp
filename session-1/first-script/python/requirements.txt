@@ -1,0 +1,3 @@
+# Session 1 — first Appium test (Python)
+Appium-Python-Client>=4.0.0
+pytest>=8.0.0
