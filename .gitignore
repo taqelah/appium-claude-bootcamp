@@ -1,0 +1,19 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Downloaded app binaries
+*.apk
+*.app
+*.ipa
+*.app.zip
+
+# OS / editor
+.DS_Store
