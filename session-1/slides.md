@@ -19,7 +19,7 @@ style: |
     right: 24px;
     width: 120px;
     height: 48px;
-    background-image: url('logo.png');
+    background-image: url('images/logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right top;
@@ -64,7 +64,7 @@ style: |
 <div class="cols">
 <div>
 
-![Syam Sasi w:280](syam.png)
+![Syam Sasi w:280](images/syam.png)
 
 </div>
 <div>
@@ -391,7 +391,7 @@ not for logic a unit test could cover.
 
 # ⚙️ Why Appium? Architecture
 
-<img src="appium-logo.png" alt="Appium" style="height: 120px; margin: 20px auto;" />
+<img src="images/appium-logo.png" alt="Appium" style="height: 120px; margin: 20px auto;" />
 
 *0:35 → 1:00*
 
