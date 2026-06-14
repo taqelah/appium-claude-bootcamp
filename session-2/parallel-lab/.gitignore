@@ -1,0 +1,15 @@
+# Downloaded app binaries — don't commit these
+*.apk
+*.app
+*.ipa
+*.app.zip
+app/
+
+# Node / Python lab artifacts
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Per-device Appium server logs (appium -p 4723 --log appium-5554.log)
+*.log

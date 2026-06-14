@@ -1,0 +1,16 @@
+{
+  "name": "appium-bootcamp-gestures-lab-node",
+  "version": "1.0.0",
+  "description": "Session 2 — Gestures lab: scroll, swipe, drag-drop, pinch, long-press & double-tap (WebdriverIO + Mocha)",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "wdio run ./wdio.conf.js"
+  },
+  "devDependencies": {
+    "@wdio/cli": "^9.0.0",
+    "@wdio/local-runner": "^9.0.0",
+    "@wdio/mocha-framework": "^9.0.0",
+    "@wdio/spec-reporter": "^9.0.0"
+  }
+}

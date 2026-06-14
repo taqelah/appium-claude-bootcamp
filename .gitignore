@@ -5,9 +5,14 @@ npm-debug.log*
 # Python
 .venv/
 venv/
+env/
 __pycache__/
 *.pyc
 .pytest_cache/
+*.egg-info/
+
+# Logs (e.g. per-device Appium server logs: appium-5554.log)
+*.log
 
 # Downloaded app binaries
 *.apk
