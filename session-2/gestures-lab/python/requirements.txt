@@ -1,0 +1,3 @@
+# Session 2 · Gestures lab — scroll, swipe, drag-drop, double-tap, long-press, pinch (Python)
+Appium-Python-Client>=4.0.0
+pytest>=8.0.0

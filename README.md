@@ -21,6 +21,7 @@ reporting and CI, and direct AI tooling to generate tests for you.
 |--------|------------|
 | [`prerequisites/`](prerequisites/) | One-time setup guide — do this **before** the first session |
 | [`session-1/`](session-1/) | **Session 1** — Introduction & Setup: landscape, Appium architecture, your first script, and a login-flow lab |
+| [`session-2/`](session-2/) | **Session 2** — Real, maintainable tests: sync/waits, gestures, data-driven, and parallel testing |
 | _(more sessions added each week)_ | |
 
 ## The 4-session arc
@@ -28,8 +29,8 @@ reporting and CI, and direct AI tooling to generate tests for you.
 | Session | Theme |
 |---------|-------|
 | **1** | Landscape & setup — first script + locators, core commands, a login flow |
-| **2** | Real, maintainable tests — Page Objects, sync/waits, gestures, data-driven |
-| **3** | Scaling — reporting, CI, parallel & cloud devices, debugging flaky tests; **Claude-assisted authoring begins** 🤖 |
+| **2** | Real, maintainable tests — sync/waits, gestures, data-driven & parallel |
+| **3** | Scaling — Page Objects, reporting, CI, cloud devices, debugging flaky tests; **Claude-assisted authoring begins** 🤖 |
 | **4** | More Claude-driven authoring + putting it all together |
 
 ## Tech stack

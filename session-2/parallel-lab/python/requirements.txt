@@ -1,0 +1,4 @@
+# Session 2 · Parallel lab — the login suite run across two devices (Python)
+Appium-Python-Client>=4.0.0
+pytest>=8.0.0
+pytest-xdist>=3.5.0
